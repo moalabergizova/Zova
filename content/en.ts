@@ -180,8 +180,8 @@ export const en = {
   },
   footer: {
     tagline: "ZOVA handles the intelligence your business runs on. So you can focus on where it's going.",
-    email: 'hello@zova.co',
-    website: 'zova.co',
+    email: 'zova@z-ova.com',
+    website: 'z-ova.com',
     founder: 'Mohammed Alabergi',
     legal: 'ZOVA · INTELLIGENCE OPERATIONS · SAUDI ARABIA · 2026',
   },
