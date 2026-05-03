@@ -52,10 +52,14 @@ const NODE_SIZES: [number, boolean][] = [
   [1.1, true],  [0.9, true],  [1.2, true],  [1.0, true],  [1.3, true],  [1.1, true],           // 6 small bright
 ]
 
-export default function NetworkCanvas() {
+interface NetworkCanvasProps {
+  isAr?: boolean
+}
+
+export default function NetworkCanvas({ isAr = false }: NetworkCanvasProps) {
   const ref = useRef<HTMLCanvasElement>(null)
 
-  useEffect(() => {
+  useEffect(() => {  // eslint-disable-line react-hooks/exhaustive-deps
     const canvas = ref.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -112,7 +116,7 @@ export default function NetworkCanvas() {
       const w  = canvas!.offsetWidth
       const h  = canvas!.offsetHeight
       const s  = sc()
-      const cx = w * 0.58
+      const cx = w * (isAr ? 0.42 : 0.58)
       const cy = h * 0.50
 
       ctx!.clearRect(0, 0, w, h)
@@ -257,7 +261,7 @@ export default function NetworkCanvas() {
     ro.observe(canvas)
     window.addEventListener('resize', resize)
     return () => { cancelAnimationFrame(raf); ro.disconnect(); window.removeEventListener('resize', resize) }
-  }, [])
+  }, [isAr])
 
   return (
     <canvas ref={ref} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block' }} />

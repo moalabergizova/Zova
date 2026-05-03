@@ -1,9 +1,12 @@
-import AnimateIn from './AnimateIn'
-import { en } from '@/content/en'
+'use client'
 
-const t = en.howItWorks
+import AnimateIn from './AnimateIn'
+import { useLang } from '@/context/LangContext'
 
 export default function HowItWorks() {
+  const { content } = useLang()
+  const t = content.howItWorks
+
   return (
     <section style={{ backgroundColor: '#F5F5F3' }} className="py-32 px-8">
       <div className="max-w-6xl mx-auto">
@@ -24,8 +27,7 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {t.steps.map((step, i) => (
             <AnimateIn key={i} delay={(i + 1) as 1 | 2 | 3}>
-              <div style={{ paddingRight: '40px' }}>
-                {/* Large background number */}
+              <div style={{ paddingInlineEnd: '40px' }}>
                 <p style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 200, fontSize: '96px', color: '#E0E0DC', lineHeight: 1, marginBottom: '20px', letterSpacing: '-4px', userSelect: 'none' }} aria-hidden="true">
                   {step.number}
                 </p>

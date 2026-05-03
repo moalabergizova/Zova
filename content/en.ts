@@ -75,6 +75,9 @@ export const en = {
     label: 'WHAT WE DO',
     headline: 'Every service. One system.',
     subline: 'Seven services. One system. Zero overhead.',
+    hint: "Select the services you're interested in",
+    selectedCount: 'selected',
+    continueBtn: 'Continue ↓',
     items: [
       {
         name: 'Online Presence',

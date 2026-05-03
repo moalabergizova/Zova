@@ -1,9 +1,12 @@
-import AnimateIn from './AnimateIn'
-import { en } from '@/content/en'
+'use client'
 
-const t = en.whatZovaIs
+import AnimateIn from './AnimateIn'
+import { useLang } from '@/context/LangContext'
 
 export default function WhatZovaIs() {
+  const { content } = useLang()
+  const t = content.whatZovaIs
+
   return (
     <section style={{ backgroundColor: '#E0E0DC' }} className="py-32 px-8">
       <div className="max-w-6xl mx-auto">
@@ -34,7 +37,7 @@ export default function WhatZovaIs() {
         <div className="grid grid-cols-1 md:grid-cols-3" style={{ alignItems: 'stretch' }}>
           {t.pillars.map((pillar, i) => (
             <AnimateIn key={i} delay={(i + 1) as 1 | 2 | 3} className="flex">
-              <div style={{ border: '0.5px solid rgba(107,107,107,0.25)', padding: '32px 28px', marginLeft: i > 0 ? '-0.5px' : '0', flex: 1 }}>
+              <div style={{ border: '0.5px solid rgba(107,107,107,0.25)', padding: '32px 28px', marginInlineStart: i > 0 ? '-0.5px' : '0', flex: 1 }}>
                 <p style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 400, fontSize: '13px', color: '#0E0E0E', marginBottom: '12px' }}>
                   {pillar.title}
                 </p>

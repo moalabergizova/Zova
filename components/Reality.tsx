@@ -1,9 +1,12 @@
-import AnimateIn from './AnimateIn'
-import { en } from '@/content/en'
+'use client'
 
-const t = en.reality
+import AnimateIn from './AnimateIn'
+import { useLang } from '@/context/LangContext'
 
 export default function Reality() {
+  const { content } = useLang()
+  const t = content.reality
+
   return (
     <section style={{ backgroundColor: '#F5F5F3' }} className="py-32 px-8">
       <div className="max-w-6xl mx-auto">
@@ -31,7 +34,7 @@ export default function Reality() {
         <div className="grid grid-cols-1 md:grid-cols-3">
           {t.painPoints.map((point, i) => (
             <AnimateIn key={i} delay={(i + 1) as 1 | 2 | 3}>
-              <div style={{ borderLeft: '0.5px solid rgba(107,107,107,0.35)', padding: '8px 28px 8px 24px' }}>
+              <div style={{ borderInlineStart: '0.5px solid rgba(107,107,107,0.35)', padding: '8px 24px' }}>
                 <p style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif", fontWeight: 400, fontSize: '13px', color: '#0E0E0E', marginBottom: '10px' }}>
                   {point.title}
                 </p>

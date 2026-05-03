@@ -1,9 +1,12 @@
-import AnimateIn from './AnimateIn'
-import { en } from '@/content/en'
+'use client'
 
-const t = en.metrics
+import AnimateIn from './AnimateIn'
+import { useLang } from '@/context/LangContext'
 
 export default function MetricsStrip() {
+  const { content } = useLang()
+  const t = content.metrics
+
   return (
     <section style={{ backgroundColor: '#0E0E0E' }} className="pt-32 pb-8 px-8">
       <div className="max-w-6xl mx-auto">

@@ -2,11 +2,13 @@
 
 import ZovaLogo from './ZovaLogo'
 import NetworkCanvas from './NetworkCanvas'
-import { en } from '@/content/en'
-
-const t = en.hero
+import { useLang } from '@/context/LangContext'
 
 export default function Hero() {
+  const { lang, content } = useLang()
+  const t = content.hero
+  const isAr = lang === 'ar'
+
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -16,42 +18,33 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col pt-28 overflow-hidden"
       style={{ backgroundColor: '#0E0E0E' }}
     >
-      {/* ── Full-hero animated network ── */}
-      <NetworkCanvas />
+      <NetworkCanvas isAr={isAr} />
 
-      {/* ── Left-side reading gradient — keeps text legible ── */}
       <div
         aria-hidden="true"
         style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(to right, #0E0E0E 38%, rgba(14,14,14,0.7) 58%, rgba(14,14,14,0.1) 100%)',
-          pointerEvents: 'none',
-          zIndex: 1,
+          position: 'absolute', inset: 0,
+          background: `linear-gradient(to ${isAr ? 'left' : 'right'}, #0E0E0E 38%, rgba(14,14,14,0.7) 58%, rgba(14,14,14,0.1) 100%)`,
+          pointerEvents: 'none', zIndex: 1,
         }}
       />
 
-      {/* ── Bottom fade — blends into ticker ── */}
       <div
         aria-hidden="true"
         style={{
-          position: 'absolute',
-          bottom: 0, left: 0, right: 0,
+          position: 'absolute', bottom: 0, left: 0, right: 0,
           height: '120px',
           background: 'linear-gradient(to top, #0E0E0E, transparent)',
-          pointerEvents: 'none',
-          zIndex: 1,
+          pointerEvents: 'none', zIndex: 1,
         }}
       />
 
-      {/* ── Logo ── */}
       <div className="relative px-8 pt-14 md:pt-20" style={{ zIndex: 2 }}>
         <div className="max-w-6xl mx-auto">
           <ZovaLogo theme="dark" className="w-[300px] md:w-[580px]" />
         </div>
       </div>
 
-      {/* ── Main content ── */}
       <div className="relative flex-1 flex items-start px-8 pt-6 pb-16 md:pt-8 md:pb-24" style={{ zIndex: 2 }}>
         <div className="max-w-6xl mx-auto w-full">
           <div style={{ maxWidth: '780px' }}>
@@ -97,7 +90,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Bottom bar ── */}
       <div className="relative px-8 pb-6" style={{ zIndex: 2, borderTop: '0.5px solid rgba(107,107,107,0.12)' }}>
         <div className="max-w-6xl mx-auto flex items-center justify-between pt-5">
           <span style={{ fontWeight: 300, fontSize: '9px', letterSpacing: '3px', color: 'rgba(107,107,107,0.4)', textTransform: 'uppercase' }}>
