@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createLead } from '@/lib/notion'
+import { sendNotificationEmail, sendConfirmationEmail } from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,14 +16,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 })
     }
 
-    await createLead({
+    const leadData = {
       name: name.trim(),
       phone: phone.trim(),
       email: email.trim(),
       company: company.trim(),
       services: Array.isArray(services) ? services : [],
       message: message?.trim() || '',
-    })
+    }
+
+    await createLead(leadData)
+
+    // Send emails — failures are logged but do not block the submission
+    await Promise.allSettled([
+      sendNotificationEmail(leadData),
+      sendConfirmationEmail(leadData),
+    ])
 
     return NextResponse.json({ ok: true })
   } catch (err: unknown) {
