@@ -74,7 +74,7 @@ export const en = {
   services: {
     label: 'WHAT WE DO',
     headline: 'Every service. One system.',
-    subline: 'Seven services. One system. Zero overhead.',
+    subline: 'Seven modules. One system. Zero overhead.',
     hint: "Select the services you're interested in",
     selectedCount: 'selected',
     continueBtn: 'Continue ↓',
@@ -82,37 +82,37 @@ export const en = {
       {
         name: 'Online Presence',
         description:
-          'Your business, online and credible. Bilingual website, AI copy, live within weeks.',
+          'Build and run. Monthly updates, SEO tracked, lead report.',
       },
       {
         name: 'Competitor Intelligence',
         description:
-          'Know what competitors do next. Weekly automated reports in your Notion.',
+          'Weekly report. What they changed and what it means for you.',
       },
       {
-        name: 'Social Media & Content',
+        name: 'Content Engine',
         description:
-          'AI-generated content calendar, scheduled and published. Zero manual posting.',
+          'Informed by what is working in your market. Published and performance reported.',
       },
       {
-        name: 'Product & Suppliers',
+        name: 'Supplier Intelligence',
         description:
-          'Market research, supplier comparison, and outreach — delivered as structured reports.',
+          'Continuous monitoring. You get alerted when something better exists.',
       },
       {
         name: 'Financial Intelligence',
         description:
-          'Monthly AI financial health report. Spending, margins, and trends in plain language.',
+          'Monthly plain-language report. Spending, margins, cash flow.',
       },
       {
-        name: 'Expansion Intelligence',
+        name: 'Growth Brief',
         description:
-          'Monthly scan of new market opportunities and growth signals for your industry.',
+          'Monthly scan ending with a specific recommended move, not just observations.',
       },
       {
         name: 'Custom Automation',
         description:
-          'Bespoke automation built for your biggest time drain. Scoped and live in 48 hours.',
+          'Your worst manual process, automated in 48 hours.',
       },
     ],
   },
