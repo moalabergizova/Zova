@@ -92,7 +92,7 @@ export const en = {
       {
         name: 'Content Engine',
         description:
-          '12–16 posts per month across your active platforms. Written, scheduled, and published — with a monthly performance report.',
+          'Every post is built around what is actually working in your market. 8–10 per month — written, scheduled, published, and performance reported.',
       },
       {
         name: 'Cost & Operations Intelligence',
