@@ -82,37 +82,37 @@ export const en = {
       {
         name: 'Online Presence',
         description:
-          'Build and run. Monthly updates, SEO tracked, lead report.',
+          'Built, managed, and working for you. Monthly updates, lead tracking, and a report that tells you what is converting.',
       },
       {
         name: 'Competitor Intelligence',
         description:
-          'Weekly report. What they changed and what it means for you.',
+          'Weekly report. What your competitors changed and exactly what it means for your business.',
       },
       {
         name: 'Content Engine',
         description:
-          'Informed by what is working in your market. Published and performance reported.',
+          '12–16 posts per month across your active platforms. Written, scheduled, and published — with a monthly performance report.',
       },
       {
-        name: 'Supplier Intelligence',
+        name: 'Cost & Operations Intelligence',
         description:
-          'Continuous monitoring. You get alerted when something better exists.',
+          'Continuous monitoring of your suppliers, contracts, and operational costs. Alerted the moment a better deal or a risk appears.',
       },
       {
         name: 'Financial Intelligence',
         description:
-          'Monthly plain-language report. Spending, margins, cash flow.',
+          'A monthly brief written like your own CFO produced it. Spending, margins, cash flow, and what to act on — without hiring a finance team.',
       },
       {
         name: 'Growth Brief',
         description:
-          'Monthly scan ending with a specific recommended move, not just observations.',
+          'Monthly deep scan of your market — new entrants, demand shifts, growth signals — ending with one specific action to take. Strategy, not summaries.',
       },
       {
         name: 'Custom Automation',
         description:
-          'Your worst manual process, automated in 48 hours.',
+          'Your worst manual process, automated and live within 48 hours. Includes 30 days of adjustments.',
       },
     ],
   },
